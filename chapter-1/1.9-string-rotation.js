@@ -31,7 +31,24 @@ const isRotation = (s1, s2) => {
 // tests
 console.log(isRotation('waterbottle', 'erbottlewat'), 'true');
 
-// i = 8
-// sub = erbottlew
-// s1.includes(sub) => false
-// i < 11 => true
+// const isRotation = (s1, s2) => {
+//   if (s1 === s2) {
+//     return true;
+//   }
+
+//   if (s1.length !== s2.length) {
+//     return false;
+//   }
+
+//   const n = s1.length;
+
+//   let i = 0;
+//   let sub = s2[i];
+//   while (s1.includes(sub) && i < n) {
+//     i++;
+//     sub += s2[i];
+//   }
+
+//   let remainder = s2.slice(i);
+//   return isSubstring(s1, remainder);
+// };
