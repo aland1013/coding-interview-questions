@@ -24,6 +24,7 @@ const kthToLast = (head, k) => {
   return kthNode.data;
 };
 
+// tests
 let a = new Node('a');
 let b = new Node('b');
 let c = new Node('c');
@@ -33,4 +34,7 @@ a.next = b;
 b.next = c;
 c.next = d;
 
-console.log(kthToLast(a, 0));
+console.log(kthToLast(a, 0), 'd');
+console.log(kthToLast(a, 1), 'c');
+console.log(kthToLast(a, 2), 'b');
+console.log(kthToLast(a, 3), 'a');
