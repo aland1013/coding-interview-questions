@@ -1,23 +1,34 @@
 class Node {
-  constructor(value = 0) {
+  constructor(value = null) {
     this.value = value;
     this.next = null;
   }
 }
 
 const sumLists = (a, b) => {
+  if (!a) return b;
+  if (!b) return a;
+
   let c = new Node(a.value + b.value);
   const head = c;
+
   let carryOne = false;
   if (c.value >= 10) {
     carryOne = true;
     c.value -= 10;
   }
-  console.log(c.value, carryOne);
 
   while (a.next || b.next) {
-    a = a.next;
-    b = b.next;
+    if (!a.next) {
+      a.value = 0;
+    } else {
+      a = a.next;
+    }
+    if (!b.next) {
+      b.value = 0;
+    } else {
+      b = b.next;
+    }
 
     let sum = a.value + b.value;
     if (carryOne) sum += 1;
@@ -59,9 +70,26 @@ const f = new Node(2);
 d.next = e;
 e.next = f;
 
-printLinkedList(a);
-printLinkedList(d);
-
 const g = sumLists(a, d);
 printLinkedList(g);
 console.log('2 -> 1 -> 9');
+
+const m = new Node(0);
+const n = new Node(0);
+const o = new Node(0);
+const p = new Node(1);
+
+m.next = n;
+n.next = o;
+o.next = p;
+
+const q = new Node(0);
+const r = new Node(0);
+const s = new Node(1);
+
+q.next = r;
+r.next = s;
+
+const t = sumLists(m, q);
+printLinkedList(t);
+console.log('0 -> 0 -> 1 -> 1');
