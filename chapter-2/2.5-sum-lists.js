@@ -43,6 +43,11 @@ const sumLists = (a, b) => {
     c = c.next;
   }
 
+  if (carryOne) {
+    c.next = new Node(1);
+    c = c.next;
+  }
+
   return head;
 };
 
