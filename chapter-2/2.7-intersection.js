@@ -6,14 +6,15 @@ class Node {
 }
 
 const checkIntersect = (listA, listB) => {
-  while (listA && listB) {
-    if (listA === listB) {
-      return true;
+  for (let k = listA; k != null; k = k.next) {
+    for (let j = listB; j != null; j = j.next) {
+      if (k === j) {
+        return k;
+      }
     }
-    listA = listA.next;
-    listB = listB.next;
   }
-  return false;
+
+  return undefined;
 };
 
 // tests
@@ -37,5 +38,5 @@ const h = new Node('2');
 g.next = h;
 h.next = c;
 
-console.log(checkIntersect(a, d), 'false');
-console.log(checkIntersect(a, g), 'true');
+console.log(checkIntersect(a, d), 'undefined');
+console.log(checkIntersect(a, g), 'node c');
