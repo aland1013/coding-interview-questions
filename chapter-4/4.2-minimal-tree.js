@@ -51,7 +51,6 @@ const createMinimalTree = (arr) => {
 
   for (let i = 1; i < arr.length; i++) {
     root.insert(arr[i]);
-    console.log(root);
   }
 
   return root;
@@ -59,4 +58,4 @@ const createMinimalTree = (arr) => {
 
 // tests
 const mt = createMinimalTree([1, 8, 5, 7, 6, 3, 4, 2]);
-mt.printBFT(); // [1, 8, 5, 7, 3, 6, 4, 2]
+mt.printBFT(); // [1, 8, 5, 3, 7, 2, 4, 6] or [1, 8, 5, 7, 3, 6, 4, 2]
